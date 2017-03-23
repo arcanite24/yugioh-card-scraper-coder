@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yugioh Card Scraper/Decoder/Encoder</title>
+    <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+    <div class="loader-container" id="loader">
+      <div class="loader"></div>
+    </div>
+    <div class="container" style="padding-top: 1rem">
+      <div class="row">
+        <!-- Get Sets Panel -->
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              Get Sets
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <button type="button" class="btn btn-primary pull-right" id="scraper-get-sets">Load Card Sets</button>
+                </div>
+                <div class="col-md-12">
+                  <p>Sets:</p>
+                  <hr>
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="res-get-sets"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Get Cards Panel -->
+        <div class="col-md-12" id="get-cards-panel" hidden>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              Get Cards
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Set Info</p>
+                  <hr>
+                  <p><strong>Name: </strong><span id="set-info-name"></span></p>
+                  <p><strong>Number or cards: </strong><span id="set-info-length"></span></p>
+                </div>
+                <div class="col-md-12">
+                  <p><em>Note: Getting all the cards info might take a while...</em></p>
+                  <button type="button" class="btn btn-primary" onclick="getAllCardsBySet()">Get cards info of the entire set</button>
+                </div>
+                <div class="col-md-12" id="res-get-cards" hidden>
+                  <hr>
+                  <p><strong>Number of cards fetched: </strong> <span id="res-get-cards-info-length"></span></p>
+                  <button type="button" class="btn btn-primary" onclick="exportJson()">Export to JSON</button>
+                  <button type="button" class="btn btn-primary" onclick="exportCsv(1)">Export to CSV - Monsters</button>
+                  <button type="button" class="btn btn-primary">Export to CSV - Spells</button>
+                  <button type="button" class="btn btn-primary">Export to CSV - Traps</button>
+                  <button type="button" class="btn btn-primary">Encode and Export</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/q.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/notify.min.js" charset="utf-8"></script>
+    <script src="js/papaparse.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/scraper.js" charset="utf-8"></script>
+  </body>
+</html>

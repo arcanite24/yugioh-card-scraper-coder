@@ -1,0 +1,16 @@
+{
+  "name": "yugioh-card-scraper",
+  "version": "1.0.0",
+  "description": "Yugioh Card DB Scraper",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arcanite",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  }
+}
